@@ -1,12 +1,28 @@
 from pydantic import BaseModel
 from typing import Optional, Dict
 
-class DatabaseRequest(BaseModel):
+class SentenceRequest(BaseModel):
+    text_file: str
+    line_number: Optional[int]
     zapotec: str
     gloss: str
     english: str
-    text_file: str
-    line_number: Optional[int]
-    morphemes: Optional[Dict]
-    comments: Optional[dict]
 
+    morphemes: Optional[Dict]
+    comments: Optional[str]
+
+
+class GlossRequest(BaseModel):
+    gloss:str
+    definition:str
+
+
+class BibleRequest(BaseModel):
+    book:str
+    chapter:int
+    verse:int
+    zapotec:str
+    gloss:str
+    english:str
+    morphemes:Optional[dict]
+    comments:Optional[str]
