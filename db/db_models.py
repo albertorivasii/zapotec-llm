@@ -23,15 +23,19 @@ class GlossDictionary(Base):
 
 
 class BibleRequest(Base):
+
+    __tablename__ = "bible_verses"
     verse_id= Column(Integer, primary_key=True, autoincrement=True)
     book = Column(String)
-    # chapter:int
-    # verse:int
-    # zapotec:str
-    # gloss:str
-    # english:str
-    # morphemes:Optional[dict]
-    # comments:Optional[str]
+    chapter= Column(String)
+    verse= Column(Integer)
+    zapotec = Column(String)
+    gloss= Column(String)
+    english= Column(String)
+    morphemes= Column(JSON, nullable=True)
+    comments= Column(String, nullable=True)
+    english:str
+
 
 # create indices
 Index("ix_text_file", ZapotecSentence.text_file)
