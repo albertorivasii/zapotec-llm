@@ -184,3 +184,5 @@ class DatabaseHelper():
     def close(self):
         self.session.close()
         return "Connection Closed."
+    
+    
