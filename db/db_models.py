@@ -22,13 +22,13 @@ class GlossDictionary(Base):
     definition = Column(String, nullable=False)
 
 
-class BibleRequest(Base):
+class BibleVerses(Base):
 
     __tablename__ = "bible_verses"
     verse_id= Column(Integer, primary_key=True, autoincrement=True)
     book = Column(String)
     chapter= Column(String)
-    verse= Column(Integer)
+    verse_num= Column(Integer)
     zapotec = Column(String)
     gloss= Column(String)
     english= Column(String)
@@ -40,4 +40,6 @@ class BibleRequest(Base):
 # create indices
 Index("ix_text_file", ZapotecSentence.text_file)
 Index("ix_line_number", ZapotecSentence.line_number)
+Index("ix_bible_chapter", BibleVerses.chapter)
+Index("ix_bible_verse", BibleVerses.verse_num)
 
