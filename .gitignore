@@ -195,6 +195,6 @@ cython_debug/
 .cursorindexingignore
 
 # more files
-.pdf
-.png
-.db
+*.pdf
+*.png
+*.db
